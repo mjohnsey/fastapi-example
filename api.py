@@ -1,6 +1,7 @@
 from uuid import UUID
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi_example.schemas import HealthResponse
 from fastapi_example.server.routers.hero import SuperheroRouter
@@ -22,6 +23,15 @@ store = HeroStore(
 )
 
 app = FastAPI()
+
+# TODO: you don't want to allow all origins in production
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 hero_router = SuperheroRouter(store)
 
