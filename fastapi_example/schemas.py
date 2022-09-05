@@ -20,7 +20,7 @@ class HealthResponse(BaseModel):
 class UpdateSuperhero(BaseModel):
     name: Optional[str]
     super_power: Optional[SuperPower]
-    # hometown: Optional[str]
+    hometown: Optional[str]
 
 
 class CreateSuperhero(UpdateSuperhero):
