@@ -3,9 +3,9 @@ from uuid import UUID
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from fastapi_example.schemas import HealthResponse
-from fastapi_example.server.routers.hero import SuperheroRouter
-from fastapi_example.stores.hero import HeroStore, Superhero
+from hero_api.schemas import HealthResponse
+from hero_api.server.routers.hero import SuperheroRouter
+from hero_api.stores.hero import HeroStore, Superhero
 
 store = HeroStore(
     heroes={

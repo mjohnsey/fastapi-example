@@ -1,4 +1,4 @@
-from fastapi_example import __version__
+from hero_api import __version__
 
 
 def test_version():

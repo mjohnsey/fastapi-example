@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fastapi-example"
+name = "hero-api"
 version = "0.1.0"
 description = ""
 authors = ["Michael Johnsey <mjohnsey@gmail.com>"]

@@ -3,13 +3,13 @@ from uuid import UUID
 
 from fastapi import APIRouter, HTTPException
 
-from fastapi_example.schemas import (
+from hero_api.schemas import (
     CreateSuperhero,
     GetHeroes,
     GetSuperhero,
     UpdateSuperhero,
 )
-from fastapi_example.stores.hero import HeroStore
+from hero_api.stores.hero import HeroStore
 
 
 class SuperheroRouter:
