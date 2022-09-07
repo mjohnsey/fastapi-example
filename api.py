@@ -13,11 +13,13 @@ store = HeroStore(
             id=UUID("00000000-0000-0000-0000-000000000001"),
             name="Superman",
             super_power="flight",
+            # hometown="Smallville",
         ),
         UUID("00000000-0000-0000-0000-000000000002"): Superhero(
             id=UUID("00000000-0000-0000-0000-000000000002"),
             name="Flash",
             super_power="super-speed",
+            # hometown="Central City",
         ),
     }
 )

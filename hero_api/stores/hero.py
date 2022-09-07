@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Dict, List
+from typing import Dict, List, Optional
 from uuid import UUID, uuid4
 
 
@@ -8,6 +8,7 @@ class Superhero:
     id: UUID
     name: str
     super_power: str
+    # hometown: Optional[str]
 
 
 class HeroStore:
@@ -20,8 +21,16 @@ class HeroStore:
     def get_hero(self, item_id: UUID) -> Superhero | None:
         return self.heroes.get(item_id)
 
-    def add_hero(self, name: str, super_power: str) -> Superhero:
-        new_hero = Superhero(id=uuid4(), name=name, super_power=super_power)
+    def add_hero(
+        self,
+        name: str,
+        super_power: str,  # hometown: Optional[str]
+    ) -> Superhero:
+        new_hero = Superhero(
+            id=uuid4(),
+            name=name,
+            super_power=super_power,  # hometown=hometown
+        )
         self._upsert_hero(new_hero)
         return new_hero
 
