@@ -37,7 +37,9 @@ class SuperheroRouter:
         self,
         hero: CreateSuperhero,
     ) -> GetSuperhero:
-        new_hero = self.hero_store.add_hero(hero.name, hero.super_power)
+        new_hero = self.hero_store.add_hero(
+            hero.name, hero.super_power, hometown=hero.hometown
+        )
         return GetSuperhero(**new_hero.__dict__)
 
     def get_heroes(self) -> GetHeroes:

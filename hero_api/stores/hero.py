@@ -8,7 +8,7 @@ class Superhero:
     id: UUID
     name: str
     super_power: str
-    # hometown: Optional[str]
+    hometown: Optional[str]
 
 
 class HeroStore:
@@ -22,14 +22,10 @@ class HeroStore:
         return self.heroes.get(item_id)
 
     def add_hero(
-        self,
-        name: str,
-        super_power: str,  # hometown: Optional[str]
+        self, name: str, super_power: str, hometown: Optional[str] = None
     ) -> Superhero:
         new_hero = Superhero(
-            id=uuid4(),
-            name=name,
-            super_power=super_power,  # hometown=hometown
+            id=uuid4(), name=name, super_power=super_power, hometown=hometown
         )
         self._upsert_hero(new_hero)
         return new_hero

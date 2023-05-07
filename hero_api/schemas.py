@@ -11,6 +11,7 @@ class SuperPower(str, Enum):
     SUPER_SPEED = "super-speed"
     GILLS = "gills"
     RICH = "rich"
+    LEVITATION = "levitation"
 
 
 class HealthResponse(BaseModel):
@@ -20,7 +21,7 @@ class HealthResponse(BaseModel):
 class UpdateSuperhero(BaseModel):
     name: Optional[str]
     super_power: Optional[SuperPower]
-    # hometown: Optional[str]
+    hometown: Optional[str]
 
 
 class CreateSuperhero(UpdateSuperhero):
